@@ -20,7 +20,7 @@ body_t = "Sending text and attachment!"
 # formattting and sending message
 request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(sandbox)
 request = requests.post(request_url, auth=('api', key),
-    files=[("attachment", open(at_file,  encoding="utf8"))],
+    files=[("attachment", open(at_file))],
     data={
     'from': sender,
     'to': recipient,

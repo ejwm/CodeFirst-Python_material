@@ -4,6 +4,8 @@ import requests
 # loading the info
 from keys import *
 
+from flask import Flask, render_template
+
 
 # email particulars
 recipient = 'ewattsmoore1@sheffield.ac.uk'
@@ -22,7 +24,8 @@ request = requests.post(request_url, auth=('api', key), data={
     'from': sender,
     'to': recipient,
     'subject': subject,
-    'text': body_t})
+    'text': body_t
+    'html': render_template(email.html)})
 
 # checking the status
 print ('Status: {0}'.format(request.status_code))

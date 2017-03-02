@@ -22,7 +22,11 @@ request = requests.post(request_url, auth=('api', key), data={
     'from': sender,
     'to': recipient,
     'subject': subject,
-    'text': body_t})
+    'text': body_t
+    'html': """<html><head>Python is awesome</head>
+                    <body><p><font color="red"> Hello World!</p></font>
+                    </body>
+                    </html>"""})
 
 # checking the status
 print ('Status: {0}'.format(request.status_code))
